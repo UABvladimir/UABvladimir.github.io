@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 8</title>
+</head>
+<body>
+    <h1>Estudiante: Erik Vladimir Huallpa Aruquipa</h1>
+    <h2>Practica # 8</h2>
+    <h2>Ejercicio 1</h2>    
+    <label>Ingrese Numero</label>
+    <input type="text" id="txtNumero">
+    <button onclick="Ejercicio1()">Generar</button>
+    <p id="resultado"></p>
+
+    <h2>Ejercicio 2</h2>    
+    <label>Ingrese Su Edad</label>
+    <input type="text" id="txtEdad">
+    <button onclick="Ejercicio2()">Verificar</button>
+    <p id="resultado2"></p>
+
+    <h2>Ejercicio 3</h2>    
+    <label>Ingrese Numero A</label>
+    <input type="text" id="txtA"><br>
+    <label>Ingrese Numero B</label>
+    <input type="text" id="txtB"><br>
+    <label>Ingrese Numero C</label>
+    <input type="text" id="txtC"><br>
+    <button onclick="Ejercicio3()">Hallar Mayor</button>
+    <p id="resultado3"></p>
+
+    <h2>Ejercicio 4</h2>    
+    <label>Ingrese Nota A</label>
+    <input type="text" id="txtNotaA"><br>
+    <label>Ingrese Nota B</label>
+    <input type="text" id="txtNotaB"><br>
+    <label>Ingrese Nota C</label>
+    <input type="text" id="txtNotaC"><br>
+    <button onclick="Ejercicio4()">Verificar Promedio</button>
+    <p id="nota"></p>
+    <p id="resultado4"></p>
+
+    <h2>Ejercicio 5</h2>    
+    <label>Ingrese Su Edad para Votar</label>
+    <input type="number" id="txtEdadVotacion" pattern="[0-9]+">
+    <button onclick="Ejercicio5()">Verificar para Votar</button>
+    <p id="resultado5"></p>
+
+
+    <script>
+        function Ejercicio1() {    
+            var numero = document.getElementById("txtNumero").value;
+            var mostrar = "";
+            switch (numero) {
+                case '1': mostrar = "ES SABADO"; break;
+                case '2': mostrar = "ES DOMINGO"; break;
+                case '3': mostrar = "ES LUNES"; break;
+                case '4': mostrar = "ES MARTES"; break;
+                case '5': mostrar = "ES MIERCOLES"; break;
+                case '6': mostrar = "ES JUEVES"; break;
+                case '7': mostrar = "ES VIERNES"; break;    
+                default: mostrar = "NO COINCIDIO CON NINGUN CASO"; break;
+            }
+            document.getElementById("resultado").innerHTML = "<b>"+mostrar+"</b>";
+        }
+
+        function Ejercicio2() {    
+            var numero = document.getElementById("txtEdad").value;
+            var mostrar = "";
+            if (numero >= 18) {
+                mostrar = "Usted YA Puede Conducir";
+            }else{
+                mostrar = "Usted NO Puede Conducir";
+            }
+            document.getElementById("resultado2").innerHTML = "<b>"+mostrar+"</b>";
+        }
+
+        function Ejercicio3() {      
+            var a = document.getElementById("txtA").value;
+            var b = document.getElementById("txtB").value;
+            var c = document.getElementById("txtC").value;
+            var mayor = 0;
+            if(a < b && a < c){
+                mayor = a;
+            }
+            if(b < a && b < c){
+                mayor = b;
+            }
+            if(c < a && c < b){
+                mayor = c;
+            }          
+            document.getElementById("resultado3").innerHTML = "<b>"+"El Mayor es: "+mayor+"</b>";
+        }
+
+        function Ejercicio4() {      
+            var a = document.getElementById("txtNotaA").value;
+            var b = document.getElementById("txtNotaB").value;
+            var c = document.getElementById("txtNotaC").value;
+            var mostrar = "";
+            var nota = (parseInt(a) + parseInt(b) + parseInt(c))/3;
+            if(nota >= 51){
+                mostrar = "Aprobado";
+            }else{
+                mostrar = "Suspendido";
+            }
+            document.getElementById("nota").innerHTML = "Su nota es: "+nota;
+            document.getElementById("resultado4").innerHTML = "<b>"+"El Estudiante: "+mostrar+"</b>";
+        }
+
+        function Ejercicio5() {   
+            var numero = document.getElementById("txtEdadVotacion").value;
+            var mostrar = "";
+            if(numero.length !== 0){
+                if (numero >= 18) {
+                    mostrar = "Usted YA Votar!";
+                }else{
+                    mostrar = "Usted NO Votar!";
+                }
+            }else{
+                mostrar = "Ingrese un Numero";
+            }
+            document.getElementById("resultado5").innerHTML = "<b>"+mostrar+"</b>";
+        }
+        
+    </script>
+</body>
+</html>
