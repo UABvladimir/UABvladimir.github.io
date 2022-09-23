@@ -11,13 +11,13 @@ function iniciar_sesion() {
 
 function dolarBoliviano(){
    var numero = prompt("Ingrese Valor en Dolar");
-   var convetir = numero * 6.98;
-   document.getElementById("resuladoConvertidos").innerHTML = "<h1>El resultado es: </h1>"+parseFloat(convetir);
+   var convetir = numero * 6.98;   
+   document.getElementById("resuladoConvertidos").innerHTML = "<h3>El resultado es: </h3>"+"<h1>"+parseFloat(convetir.toFixed(2))+" Bs.</h1>";
    //
 }
 
 function bolivianoDolar(){
     var numero = prompt("Ingrese Valor en Bolivianos");
-    var convetir = numero / 6.98;
-    document.getElementById("resuladoConvertidos").innerHTML = "<h1>El resultado es: </h1>"+parseFloat(convetir);
+    var convetir = numero / 6.98;    
+    document.getElementById("resuladoConvertidos").innerHTML = "<h3>El resultado es: </h3>"+"<h1>"+parseFloat(convetir.toFixed(2))+" $.</h1>";
  }

@@ -39,7 +39,7 @@ h3{
 
 header {
 	width: 100%;
-	padding: 50px 0;
+	padding: 0px;
 	display: flex;
 	flex-direction:row;
 	flex-wrap:wrap;
@@ -186,13 +186,13 @@ footer .redes-sociales a:hover {
 }
 
 header .logo {
-	text-align: center;
-	vertical-align: text-top;
+	text-align: center;	
 	margin-bottom: 20px;
 	border-radius:70px;
 	width: 20%;
 	height: 50px;
 	background-color:rgb(226, 226, 234);
+	
 }
 
 @media screen and (max-width: 600px) {
@@ -239,4 +239,71 @@ header .logo {
 	aside {
 		display: none;
 	}
+}
+
+
+.btn-3d {
+	padding: .6rem 1rem;
+	border: 1px solid #995309;
+	border-radius: 4px;
+	background-color: #d9750b;
+	color: #fff;
+  
+	font-size: 1.5rem;
+	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+	box-shadow: 0 1px 0 rgba(255,255,255,.5) inset,
+	  0 1px 3px rgba(0,0,0,.2);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#f90),to(#e76a00));
+	background-image: linear-gradient(#f90 10%,#e76a00 100%);
+}
+
+.btn-3d:hover, .btn-3d:focus {
+	background-color: #e0811b;
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#f0a100),to(#f70));
+	background-image: linear-gradient(#f0a100 10%,#f70 100%);
+}
+
+.btn-3d:active {
+	background-color: #cf6a00;
+	box-shadow: 0 2px 3px 0 rgba(0,0,0,.2) inset;
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#f0a100),to(#f70));
+	background-image: linear-gradient(#f0a100 10%,#f70 100%);
+}
+
+.btn-3d2 {
+	padding: .6rem 1rem;
+	border: 1px solid #995309;
+	border-radius: 4px;
+	background-color: #281be0;
+	color: #fff;
+  
+	font-size: 1.5rem;
+	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+	box-shadow: 0 1px 0 rgba(255,255,255,.5) inset,
+	  0 1px 3px rgba(0,0,0,.2);
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#f90),to(#e76a00));
+	background-image: linear-gradient(#1e58c2 10%,#1e58c2 100%);
+}
+
+.btn-3d2:hover, .btn-3d2:focus {
+	background-color: #281be0;
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#f0a100),to(#f70));
+	background-image: linear-gradient(#f0a100 10%,#f70 100%);
+}
+
+.btn-3d2:active {
+	background-color: #281be0;
+	box-shadow: 0 2px 3px 0 rgba(0,0,0,.2) inset;
+	background-image: -webkit-gradient(linear,left top,left bottom,color-stop(10%,#f0a100),to(#f70));
+	background-image: linear-gradient(#f0a100 10%,#f70 100%);
+}
+
+input[type=text], select {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
 }
