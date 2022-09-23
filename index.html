@@ -11,12 +11,13 @@
 	<div class="contenedor">
 		<header>
 			<div class="logo">
-				<p>logo</p>
+				<img src="imagenes/plox.png" width="100px" height="50px">				
 			</div>
 			<nav class="menu">
 				<a href="#">Inicio</a>
 				<a href="#">Blog</a>
 				<a href="#">Contacto</a>
+				<a href="#">Acerca de</a>
 			</nav>
 		</header>
 		<section class="main-img">
@@ -26,40 +27,34 @@
 		</section>
 		<section class="main">
 			<article>
-				<h2>Titulo del Articulo</h2>
-				<h3>Titulo del Articulo</h3>
+				<h2>Ejercicios de Javascript</h2>
+				<h3>Interaccion con Javascript</h3><br>
 			</article>
 			<aside>
 				<div class="ad">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<p>Convertir de Dolares A Bolvianos</p>
+					<button onclick="dolarBoliviano()">Convetir</button>
 				</div>
 		
 				<div class="ad">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<p>Convertir de Bolvianos A Dolares</p>
+					<button onclick="bolivianoDolar()">Convertir</button>
 				</div>
 
 				<div class="ad">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					<p>Resultado de la Conversion</p>
+					<p id="resuladoConvertidos"></p>
 				</div>
 			</aside>
 		</section>
 
-		<footer>
+		<!-- <footer>
+			<div>				
+				<h2>Ejercicios de Javascript</h2>
+			</div>
+			<div>
+				texto de footer
+			</div>
 			<div class="autor">
 				<p>Creado por Erik Huallpa</p>
 			</div>
@@ -67,7 +62,64 @@
 				<a href="">Facebook</a>
 				<a href="">Twitter</a>
 			</div>
+		</footer> -->
+
+		<section class="main2">
+			<h2>Formulario de Inicio Sesion</h2>			
+			<div style="text-align: center;">
+				<p id="demo"></p>
+				<form>
+					<input type="text" id="usuario" placeholder="Ingrese su nombre de usuario"><br>
+					<button onclick="iniciar_sesion()">Iniciar sesión</button>				
+				</form>				
+			</div>
+			<div class="logo" style="text-align: center;">
+				<img src="imagenes/plox.png">				
+			</div>
+		</section>
+
+		<footer>
+			<aside style="background-color: #3e3e3f; height: 100%;">
+				<div class="ad2">
+					<h2>Servicios</h2>
+					<ul style="list-style: none;">
+						<li>texto 1</li>
+						<li>texto 2</li>
+						<li>texto 3</li>
+						<li>texto 4</li>
+					</ul>
+				</div>
+		
+				<div class="ad2">
+					<h2>Contactos</h2>
+					<ul style="list-style: none;">
+						<li>texto 1</li>
+						<li>texto 2</li>
+						<li>texto 3</li>
+						<li>texto 4</li>
+					</ul>
+				</div>
+
+				<div class="ad2">
+					<h2>Enlaces Amigos</h2>
+					<ul style="list-style: none;">
+						<li>texto 1</li>
+						<li>texto 2</li>
+						<li>texto 3</li>
+						<li>texto 4</li>
+					</ul>
+				</div>
+				<div class="ad2">
+					<h2>Redes Sociales</h2>
+					<ul style="list-style: none;">
+						<li>Facebook</li>
+						<li>Twiter</li>
+						<li>Youtobe</li>						
+					</ul>
+				</div>
+			</aside>
 		</footer>
 	</div>
+<script src="js/mis_scripts.js"></script>
 </body>
 </html>
