@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRABAJO FINAL</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;1,400&display=swap" rel="stylesheet">
+    <style>
+        .carousel img{
+            height: 350px;
+        }
+    </style>
+    <script src="indexdb.js"></script>
+</head>
+<body>
+    <div class="">
+            <!-- barra de navegacion -->
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="#">Usuario</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>              
+                </ul>
+            </div>
+            </div>
+        </nav>
+        <!--FIN barra de navegacion -->
+
+        <!-- contenido -->
+        <div class="container">
+            <section style="height: 360px;">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6" >
+                        <form>
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label">Usuario</label>
+                                <input type="text" class="form-control" id="nombre" >
+                            </div>
+                            <div class="mb-3">
+                                <label for="apellido" class="form-label">Contraseña</label>
+                                <input type="password" class="form-control" id="apellido">
+                            </div>
+                            <button onclick="guardar()" type="button" class="btn btn-primary">Guardar</button>
+                            <!-- <button onclick="listar()" type="button" class="btn btn-success">Listar</button> -->
+                        </form>
+                    </div>
+                    <div class="col-xs-12 col-md-6" >
+                        <ul class="list-group" id="mostrarLista">
+                            <!-- <li class="list-group-item">An item</li>
+                            <li class="list-group-item">A second item</li>
+                            <li class="list-group-item">A third item</li>
+                            <li class="list-group-item">A fourth item</li>
+                            <li class="list-group-item">And a fifth one</li> -->
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>    
+    </div>
+    <script>
+        function guardar(){
+            var persona = {
+                idPersona: Math.floor(100000 + Math.random() * 900000),
+                nombre : document.getElementById('nombre').value,
+                apellido: document.getElementById('apellido').value
+            }
+            var transaccion = db.transaction("persona", "readwrite");
+            const objeto = transaccion.objectStore('persona');
+            const cargarInfo = objeto.add(persona);
+            console.log("cargar informacion", cargarInfo);
+        }
+
+        function listar(){
+            var lista = document.getElementById("mostrarLista");
+            console.log(lista);
+            db = dbConnection.result;
+            // lectura de tablas
+            var transaccion = db.transaction("persona", "readonly");
+            const objeto = transaccion.objectStore('persona');
+            console.log(objeto);
+            // iterar los elementos
+            const cursor = objeto.openCursor();
+            cursor.onsuccess = (e) =>{
+                const c = e.target.result;
+                if (c){
+                    // insertando en el html de UL, se realizo algunas concatenaciones adicionales
+                    lista.innerHTML += "<li class='list-group-item'>"+c.value['nombre']+"---"+c.value['apellido']+"<button onclick='eliminar("+c.value['idPersona']+")' type='button' class='btn btn-danger'>Eliminar</button></li>"
+                    c.continue();
+                } else {
+                    console.log("no tiene datos");
+                }
+            }
+        }
+
+        function eliminar(id){
+            console.log(id);
+            var transaccion = db.transaction("persona", "readwrite");
+            const objeto = transaccion.objectStore('persona');
+            // insertar en el objeto
+            const eliminado = objeto.delete(id);
+            eliminado.onsuccess = () => {
+                
+                listar();
+
+            }
+            eliminado.onerror = (error) => {
+                console.log(error);
+            }
+        }
+
+    </script>
+</body>
+</html>
